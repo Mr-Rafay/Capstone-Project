@@ -13,31 +13,16 @@ Welcome to the proposal for a detective type game designed to engage players wit
 
 **Objective:** The main objective of the game is to solve a series of interconnected mysteries by gathering clues, interviewing suspects and deducing the correct answers.
 
-### Gameplay Mechanics
+### Gameplay Mechanics(Must Haves)
 - Text Commands
 - Inventory System
-- Dialogue Options(Not included for main as of now, if we have time we will implement it)
 - Puzzle Solving
 - Combat/ Fighting System
+
+## Wishlist
+- Dialogue
+- Images for each character
 
 ## Storyline
 The game is based in Hell's Kitchen,New York City, plagued by a series of unsolved crimes. The player assumes the role of a vigilante(Daredevil) to uncover the truth behind these mysteries. Each case will have plot elements that connect them, leading to a final, climactic resolution.
 
-## Development Plan
-### Version 1
-* Design a map for first case and develop story elements
-* Create a sub menu that enables user to move
-### Version 2
-* Add more cases for the map
-* Add a inventory system
-* Add dialogue(optional) and interogate options
-### Version 3
-* Enhance User Interface
-* Implement a Journal System
-### Version 4
-* Add more advanced puzzle mechanics
-* Character Development
-* Implement a cobat system
-### Verison 5
-* Final Polishing
-* Other improvements
