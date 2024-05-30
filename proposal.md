@@ -24,5 +24,5 @@ Welcome to the proposal for a detective type game designed to engage players wit
 - Images for each character
 
 ## Storyline
-The game is based in Hell's Kitchen,New York City, plagued by a series of unsolved crimes. The player assumes the role of a vigilante(Daredevil) to uncover the truth behind these mysteries. Each case will have plot elements that connect them, leading to a final, climactic resolution.
+The game is based in Hell's Kitchen, New York City, plagued by a series of unsolved crimes. The player assumes the role of a vigilante(Daredevil) to uncover the truth behind these mysteries. Each case will have plot elements that connect them, leading to a final, climactic resolution.
 
