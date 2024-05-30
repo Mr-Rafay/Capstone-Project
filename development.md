@@ -1,6 +1,6 @@
 ## Development Plan
-### Version 1
-* Design a map for first case and develop story elements
+### Version 1 
+* Design a map for first case and develop intial story elements
 * Create a sub menu that enables user to move
 ### Version 2
 * Add more cases for the map
