@@ -35,4 +35,10 @@
 * Other improvements
 
 ##### Changelogs
-
+- V1 - Started map file without classes
+- V1 - Changed the dictionary to a nested list
+- V1 - Implemented classes
+- V1 - Used tabulate to print an overall map, each location will have its own map
+- V1 - Create a general child class, which help display the current locations map.
+- V1 - Only thing left is the movement to implemented properly.
+  
