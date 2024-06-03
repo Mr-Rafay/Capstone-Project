@@ -1,4 +1,3 @@
-from map import overall_map_room
 
 def get_current_location_index(map_list, current_location):
     for index, (location, _) in enumerate(map_list):
