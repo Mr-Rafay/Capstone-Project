@@ -41,4 +41,7 @@
 - V1 - Used tabulate to print an overall map, each location will have its own map
 - V1 - Create a general child class, which help display the current locations map.
 - V1 - Only thing left is the movement to implemented properly.
+- V1 - Intialized movement class in a different file
+- V1 - Added various methods to that class.
+- V1 - Some of the methods that will come in handy later are inside a docstring for now.
   
