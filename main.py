@@ -1,3 +1,4 @@
+#main.py
 from map import DetailedMap, Map
 
 if __name__ == "__main__":
