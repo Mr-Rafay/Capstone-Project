@@ -6,6 +6,7 @@ from tabulate import tabulate
 class Map:
 
     def __init__(self):
+        self.player_position = 0
         self.overall_map_room = [
             ("Hell's Kitchen Docks", [
                 "Shipping Bay", "Smuggler's Den", "Warehouse",
@@ -51,6 +52,15 @@ class DetailedMap(Map):
         for loc, rooms in self.overall_map_room:
             if loc == location:
                 rows = [rooms[i:i+3] for i in range(0, len(rooms), 3)]
-                print(tabulate(rows, tablefmt='grid'))
+                for i, row in enumerate(rows):
+                    row_str = []
+                    for j, room in enumerate(row):
+                        index = i * 3 + j
+                        if index == self.player_position:
+                            row_str.append(f"[{room}]")
+                        else:
+                            row_str.append(room)
+                            
+                    print(tabulate(rows, tablefmt='grid'))
                 return 
         print(f"No detailed map found for {location}")

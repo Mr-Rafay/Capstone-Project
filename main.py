@@ -1,4 +1,3 @@
-#main.py
 from map import DetailedMap, Map
 from Move import Move
 
@@ -15,7 +14,7 @@ def main():
 
         if user_input in ['next', 'previous']:
             move.move_player(user_input)
-        elif user_input in ['North', 'East', 'South', 'West']:
+        elif user_input in ['north', 'east', 'south', 'west']:
             move.move_within_location(user_input)
         elif user_input == "quit":
             print("Thank you for playing")

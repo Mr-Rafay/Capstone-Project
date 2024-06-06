@@ -9,7 +9,8 @@ class Move:
         self.room_position = (0, 0)  # Starting position within the detailed map
 
     def move_player(self, direction):
-        if direction == 'next' and self.player_position < len(self.map.overall_map_room) - 1:
+        if (direction == 'next' and self.player_position 
+            < len(self.map.overall_map_room) - 1):
             self.player_position += 1
             self.room_position = (0, 0)  # Reset room position when moving to a new location
         elif direction == 'previous' and self.player_position > 0:
