@@ -6,22 +6,24 @@ class Move:
         self.map = Map()
         self.detailed_map = DetailedMap()
         self.player_position = 0
+        self.locations = [loc[0] for loc in self.map.overall_map_room]
         self.room_position = (0, 0)  # Starting position within the detailed map
 
-    def move_player(self, direction):
-        if direction == 'next' and self.player_position < len(self.map.overall_map_room) - 1:
-            self.player_position += 1
-            self.room_position = (0, 0)  # Reset room position when moving to a new location
-        elif direction == 'previous' and self.player_position > 0:
-            self.player_position -= 1
-            self.room_position = (0, 0)  # Reset room position when moving to a new location
+    def move_player(self, location_name):
+        """
+        This function will help the user change locations
+        """
+        #location_index = self.map.get_location_index(location_name)
+        if location_name is not None and self.locations != -1:
+            self.player_position = self.map.get_location_index(location_name)
+            self.room_position = (0,0)
+            self.describe_current_location()
         else:
-            print("You cannot move in that direction")
-
-        self.describe_current_location()
+            print(f"Invalid location: {location_name}")
 
     def move_within_location(self, direction):
-        _, rooms = self.detailed_map.overall_map_room[self.player_position]
+        location, rooms = self.detailed_map.overall_map_room[self.player_position]
+        rooms = rooms if isinstance(rooms, list) else []
         max_x = len(rooms) - 1  # Maximum x-coordinate (row index)
         max_y = len(rooms[0]) - 1  # Maximum y-coordinate (column index)
 
