@@ -44,4 +44,6 @@
 - V1 - Intialized movement class in a different file
 - V1 - Added various methods to that class.
 - V1 - Some of the methods that will come in handy later are inside a docstring for now.
+- V1 - Added try except to print the maps in two different file.
+- V1 - The move class is not working properly, that is the next thing to fix.
   
