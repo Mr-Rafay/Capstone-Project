@@ -1,7 +1,7 @@
 +----------------------------+-------------------------------------------------------------------------------------------+
 | Location                   | Rooms                                                                                     |
 +============================+===========================================================================================+
-| Hell's Kitchen Docks       | Shipping Bay, Smuggler's Den, Warehouse, Secret Passage, Office, Lookout Point            |
+| Hell's Kitchen Docks       | Lookout Point, Smuggler's Den, Warehouse, Secret Passage, Office, Shipping Bay            |
 +----------------------------+-------------------------------------------------------------------------------------------+
 | Gang Hideout               | Main Hall, Weapon Storage, Leader's Room, Secret Exit, Surveillance Room, Torture Chamber |
 +----------------------------+-------------------------------------------------------------------------------------------+

@@ -9,7 +9,6 @@
 ### Version 2- 5th June
 * Add more cases for the map(maps inside tiles)
 * Add a inventory system
-* Add dialogue(optional) and interogate options
 #### Procedures
 - Create more tables to map.py
 - Create a inventory system that can be viewed, etc.
@@ -17,15 +16,17 @@
 ### Version 3- 7th June
 * Enhance User Interface
 * Intial case puzzles
-* Images for maps or scenes.
+* Add Enemies/Characters wherever needed
+* Add dialogue(optional) and interogate options
 #### Procedures
-- Creat function or class(whatever neccessary) for puzzles
+- Creat method for class(whatever neccessary) for puzzles
 - Add Images
 
 ### Version 4(Alpha)- June 9th
 * Add more advanced puzzle mechanics
 * Character Development
 * Implement a combat system
+* Images for maps or scenes.
 #### Procedures
 - Add more strings or storytelling elements
 - Improve the function or class for puzzles
@@ -45,5 +46,7 @@
 - V1 - Added various methods to that class.
 - V1 - Some of the methods that will come in handy later are inside a docstring for now.
 - V1 - Added try except to print the maps in two different file.
-- V1 - The move class is not working properly, that is the next thing to fix.
+- V1 - Finally after hours fixed and finished V1
+
+- V2
   
