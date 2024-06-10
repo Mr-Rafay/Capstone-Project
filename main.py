@@ -1,34 +1,53 @@
+from move import Move
+
 from map import DetailedMap, Map
-from Move import Move
 
 
 def main():
     move = Move()
-    move.describe_current_location()
+    map = Map()
+    map2 = DetailedMap()
+    print("Welcome to Daredevil: Man Without Fear")
+    print("You are Daredevil, the protector of Hell's Kitchen")
+    print("Your mission is to rid the streets of crime.")
 
     while True:
-        print("/nEnter 'next' to move to the next location,"+
-              " 'previous' to move to the previous location.")
-        print("'North', 'East', 'South', 'West'to move within the current location")
-        user_input = input("Your choice: ").strip().lower()
+        map.print_game_map_table()
+        move.describe_current_location()
+        move.describe_current_room()
+        print("What do you want to do?")
+        print("1. Move between locations")
+        print("2. Move within location")
+        print("3. View Current Location Map")
+        print("4. View Locations Map")
+        print("5. Quit")
+        user_choice = input().lower()
 
-        if user_input in ['next', 'previous']:
-            move.move_player(user_input)
-        elif user_input in ['north', 'east', 'south', 'west']:
-            move.move_within_location(user_input)
-        elif user_input == "quit":
-            print("Thank you for playing")
-            break
-        else: 
-            print("Invalid Output.")
-         
+        if user_choice == "1":
+            location_name = input("Choose a location to travel to: ").strip()
+            move.move_to_location(location_name)
+        elif user_choice == "2":
+            action = input("Where do you want to move within the location? (north, " 
+            + "south, east, west): ").lower()
+            move.move_within_location(action)
+        elif user_choice == "3":
+            location_name = (list(move.map.overall_map_room.keys())
+                             [move.player_position])
+            map2.print_detailed_map(location_name)
+            map2.view_map()
+        elif user_choice == "4":
+            map.print_location_table()
+        elif user_choice == "5":
+            print("Thanks for playing")
+            break 
+        else:
+            print("Invalid Option.")
+
 if __name__ == "__main__":
-    game_map = Map()
-    game_map.print_game_map_table() 
-    detailed_map = DetailedMap()
-    #print("\nHell's Kitchen Docks Map")
-    detailed_map.print_detailed_map("Alleyway")
     main()
-    
+
+
+
+
 
 
