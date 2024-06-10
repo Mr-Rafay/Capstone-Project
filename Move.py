@@ -5,52 +5,55 @@ class Move:
     def __init__(self):
         self.map = Map()
         self.detailed_map = DetailedMap()
-        self.player_position = 0
+        self.player_position = 0  # Start at the first location
         self.room_position = (0, 0)  # Starting position within the detailed map
 
-    def move_player(self, direction):
-        if (direction == 'next' and self.player_position 
-            < len(self.map.overall_map_room) - 1):
-            self.player_position += 1
-            self.room_position = (0, 0)  # Reset room position when moving to a new location
-        elif direction == 'previous' and self.player_position > 0:
-            self.player_position -= 1
-            self.room_position = (0, 0)  # Reset room position when moving to a new location
+    def move_to_location(self, location_name):
+        """
+        This function will help the user change locations
+        """
+        location_index = self.map.get_location_index(location_name)
+        if location_index != -1:
+            self.player_position = location_index
+            self.room_position = (0, 0)  # Reset room position when changing locations
+            self.describe_current_location()
         else:
-            print("You cannot move in that direction")
-
-        self.describe_current_location()
+            print(f"Invalid location: {location_name}")
 
     def move_within_location(self, direction):
-        _, rooms = self.detailed_map.overall_map_room[self.player_position]
-        max_x = len(rooms) - 1  # Maximum x-coordinate (row index)
-        max_y = len(rooms[0]) - 1  # Maximum y-coordinate (column index)
+        location, rooms = (list(self.detailed_map.overall_map_room.items())
+                           [self.player_position])
+        max_x = len(rooms) // 3
+        max_y = 2  # Since each row in the detailed map has 3 rooms
 
-        self.room_position = self.move(self.room_position, direction, max_x, max_y)
-        self.describe_current_room()
-
-    def move(self, current_position, direction, max_x, max_y):
-        x, y = current_position
-        if direction == "north" and x > 0:
-            current_position = (x - 1, y)
-        elif direction == "south" and x < max_x:
-            current_position = (x + 1, y)
-        elif direction == "west" and y > 0:
-            current_position = (x, y - 1)
-        elif direction == "east" and y < max_y:
-            current_position = (x, y + 1)
+        new_position = self._move(self.room_position, direction, max_x, max_y)
+        if new_position:
+            self.room_position = new_position
+            self.describe_current_room()
         else:
             print("You cannot move in that direction")
-        return current_position
+
+    def _move(self, current_position, direction, max_x, max_y):
+        x, y = current_position
+        if direction == "north" and x > 0:
+            return (x - 1, y)
+        elif direction == "south" and x < max_x:
+            return (x + 1, y)
+        elif direction == "west" and y > 0:
+            return (x, y - 1)
+        elif direction == "east" and y < max_y:
+            return (x, y + 1)
+        return None
 
     def describe_current_location(self):
-        location, _ = self.detailed_map.overall_map_room[self.player_position]
+        location, _ = (list(self.detailed_map.overall_map_room.items())
+                       [self.player_position])
         print(f"Current location: {location}")
         self.detailed_map.print_detailed_map(location)
-        self.describe_current_room()
 
     def describe_current_room(self):
-        location, rooms = self.detailed_map.overall_map_room[self.player_position]
+        location, rooms = (list(self.detailed_map.overall_map_room.items())
+                           [self.player_position])
         x, y = self.room_position
-        current_room = rooms[x][y]
+        current_room = rooms[x * 3 + y]  # Flatten the 2D array index
         print(f"Current room in {location}: {current_room}")
