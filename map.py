@@ -32,13 +32,13 @@ class Map:
                 "Gym", "Solitary Confinement"]
             ,
             "Wilson Fisk's Penthouse": [
-                "Living Room", "Study", "Art Gallery", "Safe Room",
-                "Master Bedroom", "Private Balcony"
+                "Entrance", "Art Gallery", "Safe Room",
+                "Master Bedroom", "Private Balcony","Living Room"
             ]
         }
 
         self.rooms_clues = {
-            "Hell's Kitchen Docks":{
+            "Hell's Kitchen Docks":{ 
                 "Smuggler's Den":["Thug", "Goon"],
                 "Warehouse":["Turk Barrett"],
                 "Office":["Documents", "Letter to Kingpin"],
@@ -52,17 +52,27 @@ class Map:
                 "Torture Chamber":["Carl Hoffman"]
             },
             "New York Bulletin Building":{
-                "Archive Room":["Info on Fisk's release"],
-                "Editor's Room":["Another target"],
-                "Add More":["add more"]
+                "Archive Room":["21st July, New York Bulletin Newspaper"],
+                "Editor's Room":["Jasper Evans"],
+                "Office":["Bullseye"]
 
             },
             "Prison": {
-            "Gym": ["Dumbell"],
-                      } ,
-            "Wilson Fisk's Penthouse":["Fight"]
-        
-    
+                "Cell Block": ["Inmate information"],
+                "Guard Room": ["Security protocols"],
+                "Warden's Office": ["Warden's schedule"],
+                "Cafeteria": ["Prisoner gossip"],
+                "Gym": ["Dumbell"],
+                "Solitary Confinement": ["Isolated Prisoner"],
+            },       
+            "Wilson Fisk's Penthouse": {
+                "Entrance": ["Buisness documents"],
+                "Art Gallery": ["Expensive art"],
+                "Safe Room": ["weapon mod"],
+                "Master Bedroom": ["Personal belongings"],
+                "Private Balcony": ["Panoramic view"],
+                "Living Room": ["Luxury decor"],
+            }
         
     }
 

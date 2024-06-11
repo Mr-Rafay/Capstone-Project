@@ -9,7 +9,6 @@
 ### Version 2- 7th June
 * Add more cases for the map(maps inside tiles)
 * Add a inventory system
-* Enhance User Interface("One room in alleyway and penthouse." Location naming.)
 * Case puzzles and clues
 * Add Enemies/Characters wherever needed
 * Add dialogue and interogate options
@@ -21,7 +20,7 @@
 
 
 ### Version 3(Alpha)- June 9th
-* Enhance User Interface
+* Enhance User Interface("One room in alleyway and penthouse." Location naming.)
 * Implement a combat system
 
 #### Procedures
@@ -48,5 +47,5 @@
 
 - V2 - Started V2
 - V2 - Created Inventory.py(Rafay)
+- V2 - Created dictionary for clues in each room.(Ayad)
 - V2 - 
-  

@@ -10,7 +10,7 @@ class Inventory:
 
     def remove_item(self, item):
         if item in self.items:
-            del self.items:
+            del self.items
             print(f"Removed {item} from the inventory.")
         else:
             print(f"You don't have {item} in your inventory")

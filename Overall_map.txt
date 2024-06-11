@@ -13,5 +13,5 @@
 +----------------------------+-------------------------------------------------------------------------------------------+
 | Prison                     | Cell Block, Guard Room, Warden's Office, Cafeteria, Gym, Solitary Confinement             |
 +----------------------------+-------------------------------------------------------------------------------------------+
-| Wilson Fisk's Penthouse    | Living Room, Study, Art Gallery, Safe Room, Master Bedroom, Private Balcony               |
+| Wilson Fisk's Penthouse    | Entrance, Art Gallery, Safe Room, Master Bedroom, Private Balcony, Living Room            |
 +----------------------------+-------------------------------------------------------------------------------------------+
