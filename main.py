@@ -1,6 +1,5 @@
-from move import Move
-
 from map import DetailedMap, Map
+from move import Move
 
 
 def main():

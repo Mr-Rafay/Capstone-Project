@@ -55,5 +55,5 @@ class Move:
         location, rooms = (list(self.detailed_map.overall_map_room.items())
                            [self.player_position])
         x, y = self.room_position
-        current_room = rooms[x * 3 + y]  # Flatten the 2D array index
+        current_room = rooms[x * 3 + y]  
         print(f"Current room in {location}: {current_room}")

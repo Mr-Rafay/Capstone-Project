@@ -16,8 +16,8 @@ class Map:
                 "Surveillance Room", "Torture Chamber"]
             ,
             "Hell's Kitchen Downtown": [
-                "Bar", "Apartment Block", "Grocery Store", "Bank",
-                "Police Station", "Hospital"]
+                "Bar", "Apartment Block", "Bank",
+                "Police Station", "Hospital", "The Pierre"]
             ,
             "Alleyway": [
                 "Backstreet", "Hidden Nook", "Garbage Dump", "Fire Escape",
@@ -36,6 +36,35 @@ class Map:
                 "Master Bedroom", "Private Balcony"
             ]
         }
+
+        self.rooms_clues = {
+            "Hell's Kitchen Docks":{
+                "Smuggler's Den":["Thug", "Goon"],
+                "Warehouse":["Turk Barrett"],
+                "Office":["Documents", "Letter to Kingpin"],
+                "Shipping Bay":["AK-47", "Glock-19", "M4A1"]
+                },
+            "Gang Hideout":{
+                "Main Hall":["Fight"],
+                "Weapon Storage":["Illegal shipment papers"],
+                "Leader's Room":["Mysterious file"],
+                "Surveillance Room":["Recorded Meeting"],
+                "Torture Chamber":["Carl Hoffman"]
+            },
+            "New York Bulletin Building":{
+                "Archive Room":["Info on Fisk's release"],
+                "Editor's Room":["Another target"],
+                "Add More":["add more"]
+
+            },
+            "Prison": {
+            "Gym": ["Dumbell"],
+                      } ,
+            "Wilson Fisk's Penthouse":["Fight"]
+        
+    
+        
+    }
 
     def print_game_map_table(self, filename="Overall_map.txt"):
         headers = ['Location', 'Rooms']
