@@ -15,7 +15,6 @@
 * Create a combat system but implement later.✔
 #### Procedures
 - Create method for class(whatever neccessary) for clues and clue interaction✔
-- Improve the function or class for puzzles
 - Create more tables to map.py✔
 - Create a inventory system that can be viewed, etc.✔
 
@@ -53,6 +52,6 @@
 - V2 - Created Inventory.py(Rafay)
 - V2 - Created dictionary for clues in each room.(Ayad)
 - V2 - Improved function where the clues of each room when entered is shown(Jassim)
-- V2 - Created a file that has the name combat.py
-- V2 - combat.py will depend on Character.py in the future. Not in alpha.
-- V2 - 
+- V2 - Created a file that has the name combat.py(Macisse)
+- V2 - combat.py will depend on Character.py in the future. Not in alpha.(Ayad)
+- V2 - Finished V2(Ayad)
