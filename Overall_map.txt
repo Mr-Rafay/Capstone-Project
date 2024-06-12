@@ -9,7 +9,7 @@
 +----------------------------+-------------------------------------------------------------------------------------------+
 | Alleyway                   | Backstreet, Hidden Nook, Garbage Dump, Fire Escape, Dead End, Underground Entrance        |
 +----------------------------+-------------------------------------------------------------------------------------------+
-| New York Bulletin Building | Newsroom, Editor's Office, Archive Room, Cafeteria, Printing Press, Rooftop               |
+| New York Bulletin Building | Newsroom, Editor's Office, Archive Room, Cubicle, Printing Press, Rooftop                 |
 +----------------------------+-------------------------------------------------------------------------------------------+
 | Prison                     | Cell Block, Guard Room, Warden's Office, Cafeteria, Gym, Solitary Confinement             |
 +----------------------------+-------------------------------------------------------------------------------------------+

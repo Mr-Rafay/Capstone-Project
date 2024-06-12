@@ -8,6 +8,7 @@ class Move:
         self.player_position = 0  # Start at the first location
         self.room_position = (0, 0)  # Starting position within the detailed map
 
+    
     def move_to_location(self, location_name):
         """
         This function will help the user change locations
@@ -33,27 +34,42 @@ class Move:
         else:
             print("You cannot move in that direction")
 
+    
     def _move(self, current_position, direction, max_x, max_y):
         x, y = current_position
         if direction == "north" and x > 0:
             return (x - 1, y)
-        elif direction == "south" and x < max_x:
+        elif direction == "south" and x < max_x - 1:
             return (x + 1, y)
         elif direction == "west" and y > 0:
             return (x, y - 1)
-        elif direction == "east" and y < max_y:
+        elif direction == "east" and y < max_y - 1:
             return (x, y + 1)
         return None
 
+    
     def describe_current_location(self):
         location, _ = (list(self.detailed_map.overall_map_room.items())
                        [self.player_position])
-        print(f"Current location: {location}")
+        print(f"Current location: {location}\n")
         self.detailed_map.print_detailed_map(location)
 
+    
     def describe_current_room(self):
-        location, rooms = (list(self.detailed_map.overall_map_room.items())
-                           [self.player_position])
+        location, rooms = list(self.detailed_map.overall_map_room.items())[self.player_position]
         x, y = self.room_position
-        current_room = rooms[x * 3 + y]  
-        print(f"Current room in {location}: {current_room}")
+        room_index = x * 3 + y
+    
+        # Ensure the room index is within the list bounds
+        if room_index < len(rooms):
+            current_room = rooms[room_index]
+            print(f"Current room in {location}: {current_room}")
+    
+            # Fetch and display clues for the current room
+            clues = self.map.rooms_clues.get(location, {}).get(current_room, [])
+            if clues:
+                print(f"Clues in {current_room}: {', '.join(clues)}")
+            else:
+                print(f"No clues found in {current_room}.")
+        
+

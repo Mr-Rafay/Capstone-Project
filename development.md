@@ -1,33 +1,37 @@
 ## Development Plan
 ### Version 1- 3rd June
-* Design a map for first case and develop intial story elements
-* Create a sub menu that enables user to move
+* Design a map for first case and develop intial story elements✔
+* Create a sub menu that enables user to move✔
 #### Procedures
-- Create files(as much as neccessary)
-- Each file will have classes
+- Create files(as much as neccessary)✔
+- Each file will have classes✔
 
-### Version 2- 7th June
-* Add more cases for the map(maps inside tiles)
-* Add a inventory system
-* Case puzzles and clues
-* Add Enemies/Characters wherever needed
-* Add dialogue and interogate options
+
+
+### Version 2(Alpha)- 7th June
+* Add more cases for the map(maps inside tiles)✔
+* Add a inventory system✔
+* Clues✔
+* Create a combat system but implement later.✔
 #### Procedures
-- Create method for class(whatever neccessary) for puzzles and the rest
+- Create method for class(whatever neccessary) for clues and clue interaction✔
 - Improve the function or class for puzzles
-- Create more tables to map.py
-- Create a inventory system that can be viewed, etc.
+- Create more tables to map.py✔
+- Create a inventory system that can be viewed, etc.✔
 
 
-### Version 3(Alpha)- June 9th
+
+### Version 3- June 9th
 * Enhance User Interface("One room in alleyway and penthouse." Location naming.)
 * Implement a combat system
+* Add dialogue and interogate options
+* Case puzzles 
 
 #### Procedures
 - Add more strings or storytelling elements
-- Add Images
+- Add Enemies/Characters wherever needed
 
-### Verison 4- June 11th
+### Verison 4- June 18th
 * Final Polishing
 * Images for maps or scenes.
 * Other improvements
@@ -48,4 +52,7 @@
 - V2 - Started V2
 - V2 - Created Inventory.py(Rafay)
 - V2 - Created dictionary for clues in each room.(Ayad)
+- V2 - Improved function where the clues of each room when entered is shown(Jassim)
+- V2 - Created a file that has the name combat.py
+- V2 - combat.py will depend on Character.py in the future. Not in alpha.
 - V2 - 

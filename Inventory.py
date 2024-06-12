@@ -2,11 +2,11 @@
 # from map import Map
 class Inventory:
     def __init__(self):
-        self.items = {}
+        self.items = {"Batons":"2 Batons"}
 
     def add_item(self, item, description):
         self.items[item] = description
-        print(f"Added {item}" to inventory)
+        print(f"Added {item} to inventory")
 
     def remove_item(self, item):
         if item in self.items:
@@ -16,10 +16,10 @@ class Inventory:
             print(f"You don't have {item} in your inventory")
     
     def view_inventory(self):
-        if not self.itmes:
+        if not self.items:
             print("Your inventory is empty")
             for item, description in self.items.items():
-                print(f"{item}": {desctiption})
+                print(f"{item}: {description}")
 
     def use_item(self, item):
         if item in self.items:
@@ -27,3 +27,5 @@ class Inventory:
             self.remove_item(item)
         else:
             print(f"You don't have {item} in your inventory.")
+
+   

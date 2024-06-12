@@ -1,11 +1,15 @@
 from map import DetailedMap, Map
 from move import Move
+from Interact import Interact
+from Inventory import Inventory
 
 
 def main():
     move = Move()
     map = Map()
     map2 = DetailedMap()
+    int = Interact(map.rooms_clues.keys())
+    inv = Inventory()
     print("Welcome to Daredevil: Man Without Fear")
     print("You are Daredevil, the protector of Hell's Kitchen")
     print("Your mission is to rid the streets of crime.")
@@ -14,15 +18,18 @@ def main():
         map.print_game_map_table()
         move.describe_current_location()
         move.describe_current_room()
-        print("What do you want to do?")
+        print("\nWhat do you want to do?")
         print("1. Move between locations")
         print("2. Move within location")
         print("3. View Current Location Map")
         print("4. View Locations Map")
-        print("5. Quit")
+        print("5. View Inventory")
+        print("6. Interact")
+        print("7. Quit")
         user_choice = input().lower()
 
         if user_choice == "1":
+            map.print_location_table()
             location_name = input("Choose a location to travel to: ").strip()
             move.move_to_location(location_name)
         elif user_choice == "2":
@@ -37,6 +44,10 @@ def main():
         elif user_choice == "4":
             map.print_location_table()
         elif user_choice == "5":
+            inv.view_inventory()
+        elif user_choice == "6":
+            int.examine_clues(map.rooms_clues.keys())
+        elif user_choice == "7":
             print("Thanks for playing")
             break 
         else:

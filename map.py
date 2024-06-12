@@ -24,8 +24,8 @@ class Map:
                 "Dead End", "Underground Entrance"]
             ,
             "New York Bulletin Building": [
-                "Newsroom", "Editor's Office", "Archive Room", "Cafeteria",
-                "Printing Press", "Rooftop"]
+                "Newsroom", "Editor's Office", "Archive Room",
+                "Cubicle","Printing Press", "Rooftop"]
             ,
             "Prison": [
                 "Cell Block", "Guard Room", "Warden's Office", "Cafeteria",
@@ -39,36 +39,37 @@ class Map:
 
         self.rooms_clues = {
             "Hell's Kitchen Docks":{ 
-                "Smuggler's Den":["Thug", "Goon"],
+                "Smuggler's Den":["Thug", "Goon"],#Not in Alpha
                 "Warehouse":["Turk Barrett"],
                 "Office":["Documents", "Letter to Kingpin"],
                 "Shipping Bay":["AK-47", "Glock-19", "M4A1"]
                 },
             "Gang Hideout":{
-                "Main Hall":["Fight"],
+                "Main Hall":["Fight Multiple Goons"],#The fight will not be in the alpha
                 "Weapon Storage":["Illegal shipment papers"],
                 "Leader's Room":["Mysterious file"],
                 "Surveillance Room":["Recorded Meeting"],
                 "Torture Chamber":["Carl Hoffman"]
             },
-            "New York Bulletin Building":{
-                "Archive Room":["21st July, New York Bulletin Newspaper"],
+            "New York Bulletin Building" : {
+                "Archive Room":["New York Bulletin Newspaper"],
                 "Editor's Room":["Jasper Evans"],
-                "Office":["Bullseye"]
+                #"Office":["Bullseye"],
+                "Cubicle":[""]
 
             },
             "Prison": {
                 "Cell Block": ["Inmate information"],
                 "Guard Room": ["Security protocols"],
-                "Warden's Office": ["Warden's schedule"],
-                "Cafeteria": ["Prisoner gossip"],
-                "Gym": ["Dumbell"],
+                "Warden's Office": ["Warden"],
+                "Cafeteria": ["Prisoner"],
+                "Gym": ["Exercise"],
                 "Solitary Confinement": ["Isolated Prisoner"],
             },       
             "Wilson Fisk's Penthouse": {
                 "Entrance": ["Buisness documents"],
                 "Art Gallery": ["Expensive art"],
-                "Safe Room": ["weapon mod"],
+                "Safe Room": ["Weapon mod"],#Not in Alpha
                 "Master Bedroom": ["Personal belongings"],
                 "Private Balcony": ["Panoramic view"],
                 "Living Room": ["Luxury decor"],
