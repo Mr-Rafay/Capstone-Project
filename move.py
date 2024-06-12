@@ -39,11 +39,11 @@ class Move:
         x, y = current_position
         if direction == "north" and x > 0:
             return (x - 1, y)
-        elif direction == "south" and x < max_x - 1:
+        elif direction == "south" and x < max_x:
             return (x + 1, y)
         elif direction == "west" and y > 0:
             return (x, y - 1)
-        elif direction == "east" and y < max_y - 1:
+        elif direction == "east" and y < max_y:
             return (x, y + 1)
         return None
 
@@ -56,20 +56,22 @@ class Move:
 
     
     def describe_current_room(self):
-        location, rooms = list(self.detailed_map.overall_map_room.items())[self.player_position]
+        location, rooms = (list(self.detailed_map.overall_map_room.items())
+                           [self.player_position])
         x, y = self.room_position
         room_index = x * 3 + y
-    
+
         # Ensure the room index is within the list bounds
         if room_index < len(rooms):
             current_room = rooms[room_index]
-            print(f"Current room in {location}: {current_room}")
-    
+            print(f"Current room in {location}: {current_room}\n")
+
             # Fetch and display clues for the current room
             clues = self.map.rooms_clues.get(location, {}).get(current_room, [])
             if clues:
                 print(f"Clues in {current_room}: {', '.join(clues)}")
             else:
                 print(f"No clues found in {current_room}.")
-        
+        else:
+            print("The room index is out of bounds for the current location.")
 

@@ -39,13 +39,13 @@ class Map:
 
         self.rooms_clues = {
             "Hell's Kitchen Docks":{ 
-                "Smuggler's Den":["Thug", "Goon"],#Not in Alpha
-                "Warehouse":["Turk Barrett"],
+                #"Smuggler's Den":["Thug", "Goon"],#Not in Alpha
+                #"Warehouse":["Turk Barrett"],
                 "Office":["Documents", "Letter to Kingpin"],
                 "Shipping Bay":["AK-47", "Glock-19", "M4A1"]
                 },
             "Gang Hideout":{
-                "Main Hall":["Fight Multiple Goons"],#The fight will not be in the alpha
+                #"Main Hall":["Fight Multiple Goons"],#The fight will not be in the alpha
                 "Weapon Storage":["Illegal shipment papers"],
                 "Leader's Room":["Mysterious file"],
                 "Surveillance Room":["Recorded Meeting"],
@@ -53,23 +53,23 @@ class Map:
             },
             "New York Bulletin Building" : {
                 "Archive Room":["New York Bulletin Newspaper"],
-                "Editor's Room":["Jasper Evans"],
+                #"Editor's Room":["Jasper Evans"],
                 #"Office":["Bullseye"],
                 "Cubicle":[""]
 
             },
             "Prison": {
                 "Cell Block": ["Inmate information"],
-                "Guard Room": ["Security protocols"],
-                "Warden's Office": ["Warden"],
-                "Cafeteria": ["Prisoner"],
-                "Gym": ["Exercise"],
+                #"Guard Room": ["Security protocols"],
+                #"Warden's Office": ["Warden"],
+                #"Cafeteria": ["Prisoner"],
+                #"Gym": ["Exercise"],
                 "Solitary Confinement": ["Isolated Prisoner"],
             },       
             "Wilson Fisk's Penthouse": {
                 "Entrance": ["Buisness documents"],
                 "Art Gallery": ["Expensive art"],
-                "Safe Room": ["Weapon mod"],#Not in Alpha
+                #"Safe Room": ["Weapon mod"],#Not in Alpha
                 "Master Bedroom": ["Personal belongings"],
                 "Private Balcony": ["Panoramic view"],
                 "Living Room": ["Luxury decor"],
