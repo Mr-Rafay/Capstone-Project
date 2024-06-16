@@ -41,7 +41,7 @@
 - V1 - Implemented classes(Ayad)
 - V1 - Used tabulate to print an overall map, each location will have its own map(Macisse)
 - V1 - Create a general child class, which help display the current locations map.(Ayad)
-- V1 - Only thing left is the movement to implemented properly.()
+- V1 - Only thing left is the movement to implemented properly.(Macisse)
 - V1 - Intialized movement class in a different file(Jassim)
 - V1 - Added various methods to that class.(Rafay)
 - V1 - Some of the methods that will come in handy later are inside a docstring for now.(Macisse)
@@ -55,3 +55,8 @@
 - V2 - Created a file that has the name combat.py(Macisse)
 - V2 - combat.py will depend on Character.py in the future. Not in alpha.(Ayad)
 - V2 - Finished V2(Ayad)
+
+
+- V3 - Refined to user interface for more clarity
+- V3 - Added sub maps so that each location has its own tabulate map
+- V3 - Added Tracking mechanism that allows player to see exactly where they are on the map 

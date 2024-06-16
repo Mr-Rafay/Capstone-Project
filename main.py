@@ -1,7 +1,7 @@
-from map import DetailedMap, Map
-from move import Move
 from Interact import Interact
 from Inventory import Inventory
+from map import DetailedMap, Map
+from move import Move
 
 
 def main():
@@ -46,7 +46,7 @@ def main():
         elif user_choice == "5":
             inv.view_inventory()
         elif user_choice == "6":
-            int.examine_clues(map.rooms_clues.keys())
+            print(" ")
         elif user_choice == "7":
             print("Thanks for playing")
             break 

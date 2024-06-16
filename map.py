@@ -19,9 +19,7 @@ class Map:
                 "Bar", "Apartment Block", "Bank",
                 "Police Station", "Hospital", "The Pierre"]
             ,
-            "Alleyway": [
-                "Backstreet", "Hidden Nook", "Garbage Dump", "Fire Escape",
-                "Dead End", "Underground Entrance"]
+            "Alleyway": ["Dead End"]
             ,
             "New York Bulletin Building": [
                 "Newsroom", "Editor's Office", "Archive Room",
@@ -39,40 +37,35 @@ class Map:
 
         self.rooms_clues = {
             "Hell's Kitchen Docks":{ 
-                #"Smuggler's Den":["Thug", "Goon"],#Not in Alpha
-                #"Warehouse":["Turk Barrett"],
-                "Office":["Documents", "Letter to Kingpin"],
-                "Shipping Bay":["AK-47", "Glock-19", "M4A1"]
+                "Smuggler's Den":["Thug", "Goon"],#Combat
+                "Warehouse":["Turk Barrett"],#Interogate
+                "Shipping Bay":["AK-47", "Glock-19", "M4A1",
+                                "Cargo Logs", "Truck"]
                 },
             "Gang Hideout":{
-                #"Main Hall":["Fight Multiple Goons"],#The fight will not be in the alpha
-                "Weapon Storage":["Illegal shipment papers"],
-                "Leader's Room":["Mysterious file"],
+                "Main Hall":["Thug 1, Thug 2, Thug 3, Thug 4, Thug 5"],#Combat
+                "Weapon Storage":["Weapon Rack"],
+                "Leader's Room":["Safe"],#Safe Puzzle
                 "Surveillance Room":["Recorded Meeting"],
-                "Torture Chamber":["Carl Hoffman"]
+                "Torture Chamber":["Carl Hoffman", "Bloody Tools"]#Interogate
             },
             "New York Bulletin Building" : {
-                "Archive Room":["New York Bulletin Newspaper"],
-                #"Editor's Room":["Jasper Evans"],
-                #"Office":["Bullseye"],
-                "Cubicle":[""]
+                "Office":["Bullseye"],#Combat
 
             },
             "Prison": {
-                "Cell Block": ["Inmate information"],
-                #"Guard Room": ["Security protocols"],
-                #"Warden's Office": ["Warden"],
-                #"Cafeteria": ["Prisoner"],
-                #"Gym": ["Exercise"],
-                "Solitary Confinement": ["Isolated Prisoner"],
+                "Cell Block": ["Inmate information", "Chest"],#Puzzle
+                "Guard Room": ["Security Protocols"],
+                "Warden's Office": ["Warden"],#Dialogue
+                "Cafeteria": ["Prisoner"],#Diaglogue
+                "Solitary Confinement": ["Scratched Message"],
             },       
             "Wilson Fisk's Penthouse": {
-                "Entrance": ["Buisness documents"],
-                "Art Gallery": ["Expensive art"],
-                #"Safe Room": ["Weapon mod"],#Not in Alpha
-                "Master Bedroom": ["Personal belongings"],
-                "Private Balcony": ["Panoramic view"],
-                "Living Room": ["Luxury decor"],
+                "Art Gallery": ["Fisk"],
+                "Safe Room": ["Throwable Weapon"],#Puzzle
+                "Master Bedroom": ["Batons"],
+                "Private Balcony": ["Panoramic view"], #V4 Image
+                "Living Room": ["Luxury decor"]#Combat,
             }
         
     }
