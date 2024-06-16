@@ -39,23 +39,27 @@ class Map:
             "Hell's Kitchen Docks":{ 
                 "Smuggler's Den":["Thug", "Goon"],#Combat
                 "Warehouse":["Turk Barrett"],#Interogate
-                "Shipping Bay":["AK-47", "Glock-19", "M4A1",
-                                "Cargo Logs", "Truck"]
+                "Shipping Bay":["Guns", "Cargo Logs"]
                 },
             "Gang Hideout":{
                 "Main Hall":["Thug 1, Thug 2, Thug 3, Thug 4, Thug 5"],#Combat
                 "Weapon Storage":["Weapon Rack"],
                 "Leader's Room":["Safe"],#Safe Puzzle
-                "Surveillance Room":["Recorded Meeting"],
+                "Surveillance Room":["Recorded Audio of Meeting"],
                 "Torture Chamber":["Carl Hoffman", "Bloody Tools"]#Interogate
             },
+
+            "Alleyway": {
+                "Dead End":"Fisk"#Combat
+                        },
+            
             "New York Bulletin Building" : {
                 "Office":["Bullseye"],#Combat
 
             },
             "Prison": {
                 "Cell Block": ["Inmate information", "Chest"],#Puzzle
-                "Guard Room": ["Security Protocols"],
+                "Guard Room": ["Security Detail"],
                 "Warden's Office": ["Warden"],#Dialogue
                 "Cafeteria": ["Prisoner"],#Diaglogue
                 "Solitary Confinement": ["Scratched Message"],
