@@ -55,6 +55,7 @@
 - V2 - Created a file that has the name combat.py(Macisse)
 - V2 - combat.py will depend on Character.py in the future. Not in alpha.(Ayad)
 - V2 - Finished V2(Ayad)
+- V2 - Removed some clues.(Ayad)
 
 
 - V3 - Refined to user interface for more clarity
