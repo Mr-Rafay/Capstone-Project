@@ -62,7 +62,7 @@ class Map:
                 "Guard Room": ["Security Detail"],
                 "Warden's Office": ["Warden"],#Dialogue
                 "Cafeteria": ["Prisoner"],#Diaglogue
-                "Solitary Confinement": ["Scratched Message"],
+                "Solitary Confinement": ["Mysterious Logo"],
             },       
             "Wilson Fisk's Penthouse": {
                 "Art Gallery": ["Fisk"],

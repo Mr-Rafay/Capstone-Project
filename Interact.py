@@ -1,3 +1,5 @@
+from ascii_magic import AsciiArt, from_image
+
 from Inventory import Inventory
 from map import DetailedMap, Map
 
@@ -7,6 +9,8 @@ class Interact():
         self.rooms_clues = rooms_clues
         self.inv = Inventory()
         self.map = Map()
+        #self.my_art = AsciiArt.from_image('easter egg.png')Will use it
+        #self.output = self.my_art.to_ascii(columns=70)
         self.evidence_items = {
             "Guns": {
                 "location": "Shipping Bay",
@@ -45,9 +49,11 @@ class Interact():
                 "description":"A guard gives you documents of the various past " 
                 + "protocols.",
                 "Response":"<>Whispers>This will come in handy"
-            }
-            #"Scratched Message":{
-            #   "V4 Easter Egg"
+            },
+            "Mysterious Logo":{
+               "location": "Prison",
+                "description": "",#Use the picture here
+                "Response": "What type of logo is this", #Make a better response
             }
             
             
@@ -56,7 +62,7 @@ class Interact():
         }
         
         
-        }
+        
 
 
     

@@ -15,6 +15,7 @@ def main():
     print("Your mission is to rid the streets of crime.")
 
     while True:
+    #print(int.output)
         map.print_game_map_table()
         move.describe_current_location()
         move.describe_current_room()
@@ -27,7 +28,7 @@ def main():
         print("6. Interact")
         print("7. Quit")
         user_choice = input().lower()
-
+    
         if user_choice == "1":
             map.print_location_table()
             location_name = input("Choose a location to travel to: ").strip()

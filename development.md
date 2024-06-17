@@ -30,10 +30,6 @@
 - Add more strings or storytelling elements
 - Add Enemies/Characters wherever needed
 
-### Verison 4- June 18th
-* Final Polishing
-* Images for maps or scenes.
-* Other improvements
 
 ##### Changelogs
 - V1 - Started map file without classes(Macisse)
@@ -54,8 +50,9 @@
 - V2 - Improved function where the clues of each room when entered is shown(Jassim)
 - V2 - Created a file that has the name combat.py(Macisse)
 - V2 - combat.py will depend on Character.py in the future. Not in alpha.(Ayad)
-- V2 - Finished V2(Ayad)
+- V2 - Finished V2 for Beta testing(Ayad)
 - V2 - Removed some clues.(Ayad)
+- V2 - Made a new clues dictionary, but yet to implement it.
 
 
 - V3 - Refined to user interface for more clarity
