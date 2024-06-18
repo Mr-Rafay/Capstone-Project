@@ -20,7 +20,7 @@ def main():
         move.describe_current_location()
         move.describe_current_room()
         print("\nWhat do you want to do?")
-        print("1. Move between locations")
+        print("1. Move between locations")#Change to using senses every n seconds
         print("2. Move within location")
         print("3. View Current Location Map")
         print("4. View Locations Map")
@@ -47,7 +47,7 @@ def main():
         elif user_choice == "5":
             inv.view_inventory()
         elif user_choice == "6":
-            print(" ")
+            pass 
         elif user_choice == "7":
             print("Thanks for playing")
             break 

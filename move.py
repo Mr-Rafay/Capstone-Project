@@ -24,7 +24,8 @@ class Move:
     def move_within_location(self, direction):
         location, rooms = (list(self.detailed_map.overall_map_room.items())
                            [self.player_position])
-        max_x = len(rooms) // 3
+        rows = [rooms[i:i + 3] for i in range(0, len(rooms), 3)]
+        max_x = len(rows) - 1
         max_y = 2  # Since each row in the detailed map has 3 rooms
 
         new_position = self._move(self.room_position, direction, max_x, max_y)

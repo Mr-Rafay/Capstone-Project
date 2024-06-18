@@ -59,7 +59,7 @@ class Map:
             },
             "Prison": {
                 "Cell Block": ["Inmate information", "Chest"],#Puzzle
-                "Guard Room": ["Security Detail"],
+                "Guard Room": ["Guard"],
                 "Warden's Office": ["Warden"],#Dialogue
                 "Cafeteria": ["Prisoner"],#Diaglogue
                 "Solitary Confinement": ["Mysterious Logo"],
