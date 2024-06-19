@@ -5,12 +5,20 @@ from move import Move
 
 
 def main():
+    """
+    Starts the main game.
+    """
+    user_message = ("Hello User! This is just a quick intro message."+
+    "You will be playing as Daredevil. Before you start some quick notes for you:"+
+    " Our Dev team apologizes for the lack of content. We really did put effort for"+
+    " the best game but failed to deliver.\n\n\n")
+    
     move = Move()
     map = Map()
     map2 = DetailedMap()
     int = Interact(map.rooms_clues)
     inv = Inventory()
-    current_location = list(move.map.overall_map_room.keys())[move.player_position]
+    print(user_message )
     print("Welcome to Daredevil: Man Without Fear")
     print("You are Daredevil, the protector of Hell's Kitchen")
     print("Your mission is to rid the streets of crime.")

@@ -51,7 +51,10 @@
 - V2 - combat.py will depend on Character.py in the future. Not in alpha.(Ayad)
 - V2 - Finished V2 for Beta testing(Ayad)
 - V2 - Removed some clues.(Ayad)
-- V2 - Made a new clues dictionary, but yet to implement it.
-- V2 - Decided this will be the final version due to time constraints.
+- V2 - Made a new clues dictionary, but yet to implement it.(Ayad)
+- V2 - Decided this will be the final version due to time constraints.(All)
+- V2 - Created dialogues(Rafay)
+- V2 - Fixed bug in beta that allowed user to go out of bounds(Jassim)
+- V2 - 
 
 

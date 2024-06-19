@@ -58,6 +58,10 @@ class Map:
     
 
     def print_game_map_table(self, filename="Overall_map.txt"):
+        """
+        Prints the whole map including rooms in all location in 
+        a file.
+        """
         headers = ['Location', 'Room']
         table_data = [(location, ', '.join(rooms))
                       for location, rooms in self.overall_map_room.items()]
@@ -95,6 +99,10 @@ class DetailedMap(Map):
         super().__init__()
 
     def print_detailed_map(self, location, filename='Rooms_map.txt'):
+        """
+        Prints the rooms under a location in a file
+        """
+        
         if location not in self.overall_map_room:
             print(f"No map found for {location}")
             return
@@ -110,7 +118,7 @@ class DetailedMap(Map):
 
     def view_map(self, filename="Rooms_map.txt"):
         """
-        #Displays the map file content
+        Displays the map file content
         """
         try:
             with open(filename, 'r') as file:

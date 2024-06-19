@@ -177,6 +177,7 @@ class Interact():
         if talk  == "Turk Barrett":
             print(f"Description: {self.suspects['Turk Barrett']['description']}")
             print(f"Description: {self.suspects['Turk Barrett']['dialogue']}")
+            self.inv.add_item("Documents")
             
         elif talk ==  "Carl Hoffman":
             print(f"Description: {self.suspects['Carl Hoffman']['description']}")
