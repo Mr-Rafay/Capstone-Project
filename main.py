@@ -19,6 +19,7 @@ def main():
         map.print_game_map_table()
         move.describe_current_location()
         move.describe_current_room()
+        rooms_clues = map.rooms_clues
         print("\nWhat do you want to do?")
         print("1. Move between locations")
         print("2. Move within location")
@@ -47,7 +48,8 @@ def main():
         elif user_choice == "5":
             inv.view_inventory()
         elif user_choice == "6":
-            pass 
+            current_location = move.describe_current_location()
+            int.ask_and_interact(current_location)
         elif user_choice == "7":
             print("Thanks for playing")
             break 

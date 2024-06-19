@@ -37,25 +37,15 @@ class Map:
 
         self.rooms_clues = {
             "Hell's Kitchen Docks":{ 
-                "Smuggler's Den":["ThugA", "ThugB"],#Combat
                 "Warehouse":["Turk Barrett"],#Interogate
                 "Shipping Bay":["Guns", "Cargo Logs"]
                 },
             "Gang Hideout":{
-                "Main Hall":["Thug 1, Thug 2, Thug 3, Thug 4, Thug 5"],#Combat
                 "Weapon Storage":["Weapon Rack"],
                 "Surveillance Room":["Recorded Audio of Meeting"],
                 "Torture Chamber":["Carl Hoffman"]#Interogate
             },
 
-            "Alleyway": {
-                "Dead End":"Fisk"#Combat
-                        },
-            
-            "New York Bulletin Building" : {
-                "Office":["Bullseye"],#Combat
-
-            },
             "Prison": {
                 "Cell Block": ["Inmate information"],
                 "Guard Room": ["Guard"],

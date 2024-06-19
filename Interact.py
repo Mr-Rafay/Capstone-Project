@@ -2,6 +2,7 @@ from ascii_magic import AsciiArt
 
 from Inventory import Inventory
 from map import Map
+from move import Move
 
 
 class Interact():
@@ -9,6 +10,7 @@ class Interact():
         self.rooms_clues = rooms_clues
         self.inv = Inventory()
         self.map = Map()
+        self.move = Move()
         self.my_art = AsciiArt.from_image('easter egg.png')
         self.output = self.my_art.to_ascii(columns=70)
         self.evidence_items = {
@@ -38,11 +40,12 @@ class Interact():
                 "location": "Surveillance Room",
                 "description":"An audio of a meeting is playing: "+
                     "'Business as usual. Look I provide you guns you show me the money"+
-                    " that seems a good deal to me.' Another voice goes 'Yes Mr.Turk it is" 
-                    " but this time I can't, you see cash is short and we as an upcoming" +
-                    " gang need to do something quick and get the atten' (gunshots)."+
-                    " Turk: Clean the bodies, I don't want the boss to know this."
-                    + "<end audio>",
+                    " that seems a good deal to me.' Another voice goes "+
+                    "'Yes Mr.Turk it is" 
+                    " but this time I can't, you see cash is short and we as an " +
+                    " upcoming gang need to do something quick and get the atten "+
+                    " (gunshots).Turk: Clean the bodies, I don't want the boss to x"
+                    + "(gunshots). <end audio>",
                 
                 "Response": "Huh..Looks like who ever is new to gangs ain't know "+
                     "how to be tough, these gang members need to pay."
@@ -73,31 +76,7 @@ class Interact():
                     "Turk Barrett: Okay, okay! I might have seen something, "+
                     "but I ain't no snitch!**gives Documents**"
                     
-                ]
-            },
-
-            "ThugA": {
-                "location": "Smuggler's Den",
-                "description": "A nervous thug, likely low on the criminal hierarchy.",
-                "evidence": "A smuggled weapon found at the scene.",
-                "dialogue": [
-                    "Daredevil: Who are you working for?",
-                    "ThugA: (nervous) I... I ain't sayin' nothin'.",
-                    "Daredevil: We know you're not the mastermind. Give us a name.",
-                    "ThugA: You don't get it, man. If I talk, I'm dead!",
-                    "Daredevil beats the thug unconscious."
-                ]
-            },
-
-            "ThugB": {
-                "location": "Smuggler's Den",
-                "description": "A stubborn thug with a tough exterior.",
-                "evidence": "A key to a hidden stash.",
-                "dialogue": [
-                    "Daredevil: You were seen at the scene. What do you have to say?",
-                    "ThugB: I ain't no snitch. Do your worst.",
-                    "Daredevil: We'll see how long you can hold out.",
-                    "ThugB: (sighs) Fine, but you didn't hear it from me."
+                    
                 ]
             },
 
@@ -107,8 +86,9 @@ class Interact():
                 "evidence": "A note with the Kingpin's name.",
                 "dialogue": [
                     "Daredevil: Tell me about the Kingpin.",
-                    "Carl Hoffman: You think I'm scared of you? You don't know who you're dealing with.",
-                    "Daredevil: We have ways of making you talk, Hoffman.",
+                    "Carl Hoffman: You think I'm scared of you? You don't know who"+
+                    "you're dealing with.",
+                    "Daredevil: I have ways of making you talk, Hoffman.",
                     "Carl Hoffman: Alright, alright! The Kingpin's name is Fisk. Wilson Fisk."
                 ]
             },
@@ -159,24 +139,51 @@ class Interact():
 
            
         }
-    def examine_clues(self, item_name, current_location):
-        """
-        Allows the player to examine items/clues
-        """
-        if item_name in self.evidence_items[item_name]['location'] == current_location:
-            return self.evidence_items[item_name]['description']
-        else:
-            return f"The item {item_name} is not present in the current location"
+    def ask_and_interact(self, current_location):
+           print(f"You are in {current_location}. What do you want to interact with?")
+           items_in_room = ([item for item, details in self.evidence_items.items()
+                             if details["location"] == current_location])
+    
+           if not items_in_room:
+               print("There are no items to interact with in this room.")
+               return
+    
+           print("Items available:")
+           for i, item in enumerate(items_in_room, start=1):
+               print(f"{i}. {item}")
+    
+           choice = (int(input("Enter the number of the item you want to interact"+
+           "with: ")) - 1)
+    
+           selected_item = items_in_room[choice]
+           print(f"You chose to interact with: {selected_item}")
+    
+           action = input("Do you want to 'examine' or 'pick up' the item? ").lower()
+    
+           if action == "examine":
+               self.examine_item(selected_item)
+           elif action == "pick up":
+               self.pick_up_item(selected_item)
+           else:
+               print("Invalid action. Choose either 'examine' or 'pick up'.")
+    
+    def examine_item(self, item):
+       if item in self.evidence_items:
+           description = self.evidence_items[item]["description"]
+           response = self.evidence_items[item]["Response"]
+           print(f"Examining {item}: {description}")
+           print(f"Response: {response}")
+       else:
+           print("This item cannot be examined.")
 
-    def pick_up_item(self, item_name, current_location):
-        """
-        Allows players to pick up items
-        """
-        if item_name in self.evidence_items[item_name]['location'] == current_location:
-            self.inv.add_item(item_name)
-        else:
-            return f"The item {item_name} is not present in the current location"
-        
+    def pick_up_item(self, item):
+       if item in self.evidence_items:
+           self.inv.add_item(item)
+           print(f"You picked up: {item}")
+           # Optionally, remove the item from the evidence_items
+           del self.evidence_items[item]
+       else:
+           print("This item cannot be picked up.")
         
     
         
