@@ -36,7 +36,7 @@ class Map:
         }
 
         self.rooms_clues = {
-            "Hell's Kitchen Docks":{
+            "Hell's Kitchen Docks":{ 
                 "Warehouse":["Turk Barrett"],
                 "Shipping Bay":["Guns", "Cargo Logs"]
                 },
@@ -87,12 +87,7 @@ class Map:
                 return index
         return -1
 
-    def get_clues_in_room(self, location, room):
-        if location in self.rooms_clues:
-            location_clues = self.rooms_clues[location]
-            if room in location_clues:
-                return location_clues[room]
-        return []
+    
 
 
 class DetailedMap(Map):

@@ -1,4 +1,3 @@
-#move.py
 from map import DetailedMap, Map
 
 
@@ -69,7 +68,7 @@ class Move:
             print(f"Current room in {location}: {current_room}\n")
 
             # Fetch and display clues for the current room
-            clues = self.map.get_clues_in_room(location, current_room)
+            clues = self.map.rooms_clues.get(location, {}).get(current_room, [])
             if clues:
                 print(f"Clues in {current_room}: {', '.join(clues)}")
             else:

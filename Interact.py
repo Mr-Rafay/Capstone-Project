@@ -139,49 +139,85 @@ class Interact():
 
            
         }
+        self.list_1 = list(self.evidence_items.keys())
+        self.list_2 = list(self.suspects.keys())
+    
+    def desc_item(self, examine):
+        """
+        Prints response and descriptions for objects that are
+        interacted with.
         
-    def ask_and_interact(self, current_location):
-        clues_in_room = self.rooms_clues.get(current_location, [])
-        if clues_in_room:
-            print(f"You are in {current_location}. What do you want to interact with?")
-            for clue in clues_in_room:
-                print(f"- {clue}")
-            clue_name = (input("Enter the name of the clue you want to interact with: ")
-                         .strip())
+        """
+        if examine == 'Guns':
+            print(f"Description: {self.evidence_items['Guns']['description']}")
+            print(f"Response: {self.evidence_items['Guns']['Response']}")
+        elif examine =='Cargo Logs':
+            print(f"Description: {self.evidence_items['Cargo Logs']['description']}")
+            print(f"Response: {self.evidence_items['Cargo Logs']['Response']}")
+        elif examine =='Weapon Rack':
+            print(f"Description: {self.evidence_items['Weapon Rack']['description']}")
+            print(f"Response: {self.evidence_items['Weapon Rack']['Response']}")
+        elif examine =='Recorded Audio':
+            print(
+            f"Description: {self.evidence_items['Recorded Audio']['description']}")
+            print(f"Response: {self.evidence_items['Recorded Audio']['Response']}")
+        elif examine =='Security Protocols':
+            print(
+            f"Description: {self.evidence_items['Security Protocols']['description']}")
+            print(f"Response: {self.evidence_items['Security Protocols']['Response']}")
 
-            if clue_name in clues_in_room:
-                self.interact_with_clue(clue_name)
+        elif examine == "Mysterious Logo":
+            print(self.output)
+
+    def interogate(self, talk):
+        """
+        Handles interogation for suspects
+        
+        """
+        if talk  == "Turk Barrett":
+            print(f"Description: {self.suspects['Turk Barrett']['description']}")
+            print(f"Description: {self.suspects['Turk Barrett']['dialogue']}")
+            
+        elif talk ==  "Carl Hoffman":
+            print(f"Description: {self.suspects['Carl Hoffman']['description']}")
+            print(f"Description: {self.suspects['Carl Hoffman']['dialogue']}")
+            
+        elif talk == "Guard":
+            print(f"Description: {self.suspects['Guard']['description']}")
+            print(f"Description: {self.suspects['Guard']['dialogue']}")
+            
+        elif talk == "Warden":
+            print(f"Description: {self.suspects['Warden']['description']}")
+            print(f"Description: {self.suspects['Warden']['dialogue']}")
+            
+        elif talk == "Prisoner":
+            print(f"Description: {self.suspects['Prisoner']['description']}")
+            print(f"Description: {self.suspects['Prisoner']['dialogue']}")
+
+    def handle_user_input(self):
+        """
+        Handles user input to determine if they want to examine or interrogate.
+        """
+        user_input = (
+        input("Enter 'examine' to examine an item or"+ 
+              "'interrogate' to talk to a suspect: ").lower()
+        )
+
+        if user_input == "examine":
+            item = input("Enter the item you want to examine: ")
+            if item in self.list_1:
+                self.desc_item(item)
             else:
-                print("Invalid choice. No such item to interact with in the room.")
-        else:
-            print("There are no items to interact with in this room.")
-    
-    def interact_with_clue(self, clue_name):
-        action = (input("Do you want to examine or take it? (examine/take): ")
-                  .strip().lower())
-        if action == "examine":
-            self.examine_item(clue_name)
-        elif action == "take":
-            self.pick_up_item(clue_name)
-        else:
-            print("Invalid action.")
-    
-    def examine_item(self, item):
-       if item in self.evidence_items :
-           description = self.evidence_items[item]["description"]
-           response = self.evidence_items[item]["Response"]
-           print(f"Examining {item}: {description}")
-           print(f"Response: {response}")
-       else:
-           print("This item cannot be examined.")
-    
-    def pick_up_item(self, item):
-       if item in self.evidence_items:
-           self.inv.add_item(item)
-           print(f"You picked up: {item}")
-           # Optionally, remove the item from the evidence_items
-           del self.evidence_items[item]
-       else:
-           print("This item cannot be picked up.")
+                print("Invalid item. Please enter a valid item.")
 
- 
+        elif user_input == "interrogate":
+            suspect = input("Enter the suspect you want to interrogate: ")
+            if suspect in self.list_2:
+                self.interogate(suspect)
+            else:
+                print("Invalid suspect. Please enter a valid suspect.")
+        else:
+            print("Invalid input. Please enter 'examine' or 'interrogate'.")
+    
+        
+     

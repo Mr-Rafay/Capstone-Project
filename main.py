@@ -48,7 +48,7 @@ def main():
         elif user_choice == "5":
             inv.view_inventory()
         elif user_choice == "6":
-            int.ask_and_interact(current_location)
+            int.handle_user_input()
         elif user_choice == "7":
             print("Thanks for playing")
             break 
