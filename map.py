@@ -37,16 +37,15 @@ class Map:
 
         self.rooms_clues = {
             "Hell's Kitchen Docks":{ 
-                "Smuggler's Den":["Thug", "Goon"],#Combat
+                "Smuggler's Den":["ThugA", "ThugB"],#Combat
                 "Warehouse":["Turk Barrett"],#Interogate
                 "Shipping Bay":["Guns", "Cargo Logs"]
                 },
             "Gang Hideout":{
                 "Main Hall":["Thug 1, Thug 2, Thug 3, Thug 4, Thug 5"],#Combat
                 "Weapon Storage":["Weapon Rack"],
-                "Leader's Room":["Safe"],#Safe Puzzle
                 "Surveillance Room":["Recorded Audio of Meeting"],
-                "Torture Chamber":["Carl Hoffman", "Bloody Tools"]#Interogate
+                "Torture Chamber":["Carl Hoffman"]#Interogate
             },
 
             "Alleyway": {
@@ -58,33 +57,30 @@ class Map:
 
             },
             "Prison": {
-                "Cell Block": ["Inmate information", "Chest"],#Puzzle
+                "Cell Block": ["Inmate information"],
                 "Guard Room": ["Guard"],
                 "Warden's Office": ["Warden"],#Dialogue
                 "Cafeteria": ["Prisoner"],#Diaglogue
                 "Solitary Confinement": ["Mysterious Logo"],
             },       
             "Wilson Fisk's Penthouse": {
-                "Art Gallery": ["Fisk"],
-                "Safe Room": ["Throwable Weapon"],#Puzzle
                 "Master Bedroom": ["Batons"],
-                "Private Balcony": ["Panoramic view"], #V4 Image
-                "Living Room": ["Luxury decor"]#Combat,
+                "Living Room": ["Fisk"]#Combat,
             }
         
     }
 
     def print_game_map_table(self, filename="Overall_map.txt"):
-        headers = ['Location', 'Rooms']
+        headers = ['Location', 'Room']
         table_data = [(location, ', '.join(rooms))
                       for location, rooms in self.overall_map_room.items()]
         table = tabulate(table_data, headers=headers, tablefmt='grid')
-
         try:
             with open(filename, 'w') as file:
                 file.write(table)
         except IOError:
-            print("Unble to export map layout")
+            print("Unable to export map layout")
+            
 
     def print_location_table(self):
         """
@@ -124,9 +120,9 @@ class DetailedMap(Map):
             print(f"Unable to export file for {location}")
 
     def view_map(self, filename="Rooms_map.txt"):
-
+        """
         #Displays the map file content
-
+        """
         try:
             with open(filename, 'r') as file:
                 print(file.read())

@@ -4,8 +4,7 @@ class Inventory:
     def __init__(self):
         self.items = {"Batons":"2 Batons"}
 
-    def add_item(self, item, description):
-        self.items[item] = description
+    def add_item(self, item):
         print(f"Added {item} to inventory")
 
     def remove_item(self, item):

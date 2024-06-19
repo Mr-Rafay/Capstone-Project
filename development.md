@@ -24,7 +24,6 @@
 * Enhance User Interface("One room in alleyway and penthouse." Location naming.)
 * Implement a combat system
 * Add dialogue and interogate options
-* Case puzzles 
 
 #### Procedures
 - Add more strings or storytelling elements
@@ -53,8 +52,6 @@
 - V2 - Finished V2 for Beta testing(Ayad)
 - V2 - Removed some clues.(Ayad)
 - V2 - Made a new clues dictionary, but yet to implement it.
+- V2 - Decided this will be the final version due to time constraints.
 
 
-- V3 - Refined to user interface for more clarity
-- V3 - Added sub maps so that each location has its own tabulate map
-- V3 - Added Tracking mechanism that allows player to see exactly where they are on the map 

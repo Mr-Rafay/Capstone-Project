@@ -1,3 +1,4 @@
+#move.py
 from map import DetailedMap, Map
 
 

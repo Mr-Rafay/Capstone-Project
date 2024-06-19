@@ -20,7 +20,7 @@ def main():
         move.describe_current_location()
         move.describe_current_room()
         print("\nWhat do you want to do?")
-        print("1. Move between locations")#Change to using senses every n seconds
+        print("1. Move between locations")
         print("2. Move within location")
         print("3. View Current Location Map")
         print("4. View Locations Map")

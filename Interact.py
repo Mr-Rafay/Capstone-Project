@@ -1,7 +1,7 @@
-from ascii_magic import AsciiArt, from_image
+from ascii_magic import AsciiArt
 
 from Inventory import Inventory
-from map import DetailedMap, Map
+from map import Map
 
 
 class Interact():
@@ -55,49 +55,135 @@ class Interact():
                 "Response":"<>Whispers>This will come in handy."
             },
             
-            "Mysterious Logo":{
-               "location": "Prison",
-                "description":  self.output,
-                "Response": "What type of logo is this?", #Make a better response
-            }
             
-            
-            
-            
+                
         }
         
         self.suspects = {
-            "Turk Barrett":{
-                "location":"",
-                "description": "", #Develop a transcript along 
-                "evidence": "Documents",
-            
+            "Turk Barrett": {
+                "location": "Warehouse",
+                "description": "A low-level informant with a history of petty crimes.",
+                "evidence": "Documents detailing an illegal shipment.",
+                "dialogue": [
+                    "Daredevil: Where were you last night, Turk?",
+                    "Turk Barrett: I ain't know nothin' man. I was just here, minding"+
+                    "my own business.",
+                    "Daredevil: We've got documents that say otherwise, Turk."+
+                    "Start talking.",
+                    "Turk Barrett: Okay, okay! I might have seen something, "+
+                    "but I ain't no snitch!**gives Documents**"
+                    
+                ]
             },
 
-            "Thug":{
-                "location":"",
-                "description": "",#Subtitles
-                "evidence": ""
-                
+            "ThugA": {
+                "location": "Smuggler's Den",
+                "description": "A nervous thug, likely low on the criminal hierarchy.",
+                "evidence": "A smuggled weapon found at the scene.",
+                "dialogue": [
+                    "Daredevil: Who are you working for?",
+                    "ThugA: (nervous) I... I ain't sayin' nothin'.",
+                    "Daredevil: We know you're not the mastermind. Give us a name.",
+                    "ThugA: You don't get it, man. If I talk, I'm dead!",
+                    "Daredevil beats the thug unconscious."
+                ]
             },
-            
-            "Guard":{
-                "location":"",
-                "description": "",
-                
+
+            "ThugB": {
+                "location": "Smuggler's Den",
+                "description": "A stubborn thug with a tough exterior.",
+                "evidence": "A key to a hidden stash.",
+                "dialogue": [
+                    "Daredevil: You were seen at the scene. What do you have to say?",
+                    "ThugB: I ain't no snitch. Do your worst.",
+                    "Daredevil: We'll see how long you can hold out.",
+                    "ThugB: (sighs) Fine, but you didn't hear it from me."
+                ]
             },
-            
-            "Warden":{
-                "location":"",
-                "description": "",
+
+            "Carl Hoffman": {
+                "location": "Torture Chamber",
+                "description": "A hardened criminal with ties to the Kingpin.",
+                "evidence": "A note with the Kingpin's name.",
+                "dialogue": [
+                    "Daredevil: Tell me about the Kingpin.",
+                    "Carl Hoffman: You think I'm scared of you? You don't know who you're dealing with.",
+                    "Daredevil: We have ways of making you talk, Hoffman.",
+                    "Carl Hoffman: Alright, alright! The Kingpin's name is Fisk. Wilson Fisk."
+                ]
             },
-            
-            #Add as much as neccessary
+
+            "Guard": {
+                "location": "Guard Room",
+                "description": "A corrupt guard who knows the prison's inner workings.",
+                "evidence": "Security protocol documents.",
+                "dialogue": [
+                    "Daredevil: What do you have on the incoming and outgoing prsioners?",
+                    "Guard: I can't tell you that. I'll lose my job.",
+                    "Daredevil: Your job is the least of your worries right now. Start "+
+                    "talking.",
+                    "Guard: Fine, heres a document with all that info. That's all"+
+                    "I know!"
+                ]
+            },
+
+            "Warden": {
+                "location": "Warden's Office",
+                "description": "The authoritative figure in the prison, with hidden"+
+                "secrets.",
+                "evidence": "A ledger of illegal transactions.",
+                "dialogue": [
+                    "Daredevil: We know you're hiding something.",
+                    "Warden: You have no authority here. Leave my office immediately.",
+                    "Daredevil: This can go one of two ways. Cooperate, or face the "+
+                    "consequences.",
+                    "Warden: Alright, alright! There's a ledger hidden in my desk. "+
+                    "It has all the dirty deals."
+                ]
+            },
+
+            "Prisoner": {
+                "location": "Cafeteria",
+                "description": "A prisoner with loose lips and a fear of solitary.",
+                "evidence": "A map of the prison with escape routes marked.",
+                "dialogue": [
+                    "Daredevil: What do you know about the recent breakout?",
+                    "Prisoner: I heard some things, but I ain't involved. Promise.",
+                    "Daredevil: If you want to stay out of solitary, you better start"+
+                    "talking. Who's the new guy in solitary?",
+                    "Prisoner: Okay, okay! They call him the punisher.They drew his"+ 
+                    "sign over there"+
+                    "**points to the Mysterious Logo**"
+                ]
+            }
+
+           
         }
+    def examine_clues(self, item_name, current_location):
+        """
+        Allows the player to examine items/clues
+        """
+        if item_name in self.evidence_items[item_name]['location'] == current_location:
+            return self.evidence_items[item_name]['description']
+        else:
+            return f"The item {item_name} is not present in the current location"
+
+    def pick_up_item(self, item_name, current_location):
+        """
+        Allows players to pick up items
+        """
+        if item_name in self.evidence_items[item_name]['location'] == current_location:
+            self.inv.add_item(item_name)
+        else:
+            return f"The item {item_name} is not present in the current location"
+        
+        
+    
+        
+            
 
 
         
 
 
-    
-    
+ 
