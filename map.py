@@ -36,29 +36,26 @@ class Map:
         }
 
         self.rooms_clues = {
-            "Hell's Kitchen Docks":{ 
-                "Warehouse":["Turk Barrett"],#Interogate
+            "Hell's Kitchen Docks":{
+                "Warehouse":["Turk Barrett"],
                 "Shipping Bay":["Guns", "Cargo Logs"]
                 },
             "Gang Hideout":{
                 "Weapon Storage":["Weapon Rack"],
                 "Surveillance Room":["Recorded Audio of Meeting"],
-                "Torture Chamber":["Carl Hoffman"]#Interogate
+                "Torture Chamber":["Carl Hoffman"]
             },
 
             "Prison": {
                 "Cell Block": ["Inmate information"],
                 "Guard Room": ["Guard"],
-                "Warden's Office": ["Warden"],#Dialogue
-                "Cafeteria": ["Prisoner"],#Diaglogue
+                "Warden's Office": ["Warden"],
+                "Cafeteria": ["Prisoner"],
                 "Solitary Confinement": ["Mysterious Logo"],
             },       
-            "Wilson Fisk's Penthouse": {
-                "Master Bedroom": ["Batons"],
-                "Living Room": ["Fisk"]#Combat,
             }
         
-    }
+    
 
     def print_game_map_table(self, filename="Overall_map.txt"):
         headers = ['Location', 'Room']
@@ -89,6 +86,13 @@ class Map:
             if location == location_name:
                 return index
         return -1
+
+    def get_clues_in_room(self, location, room):
+        if location in self.rooms_clues:
+            location_clues = self.rooms_clues[location]
+            if room in location_clues:
+                return location_clues[room]
+        return []
 
 
 class DetailedMap(Map):

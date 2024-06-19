@@ -139,43 +139,42 @@ class Interact():
 
            
         }
+        
     def ask_and_interact(self, current_location):
-           print(f"You are in {current_location}. What do you want to interact with?")
-           items_in_room = ([item for item, details in self.evidence_items.items()
-                             if details["location"] == current_location])
+        clues_in_room = self.rooms_clues.get(current_location, [])
+        if clues_in_room:
+            print(f"You are in {current_location}. What do you want to interact with?")
+            for clue in clues_in_room:
+                print(f"- {clue}")
+            clue_name = (input("Enter the name of the clue you want to interact with: ")
+                         .strip())
+
+            if clue_name in clues_in_room:
+                self.interact_with_clue(clue_name)
+            else:
+                print("Invalid choice. No such item to interact with in the room.")
+        else:
+            print("There are no items to interact with in this room.")
     
-           if not items_in_room:
-               print("There are no items to interact with in this room.")
-               return
-    
-           print("Items available:")
-           for i, item in enumerate(items_in_room, start=1):
-               print(f"{i}. {item}")
-    
-           choice = (int(input("Enter the number of the item you want to interact"+
-           "with: ")) - 1)
-    
-           selected_item = items_in_room[choice]
-           print(f"You chose to interact with: {selected_item}")
-    
-           action = input("Do you want to 'examine' or 'pick up' the item? ").lower()
-    
-           if action == "examine":
-               self.examine_item(selected_item)
-           elif action == "pick up":
-               self.pick_up_item(selected_item)
-           else:
-               print("Invalid action. Choose either 'examine' or 'pick up'.")
+    def interact_with_clue(self, clue_name):
+        action = (input("Do you want to examine or take it? (examine/take): ")
+                  .strip().lower())
+        if action == "examine":
+            self.examine_item(clue_name)
+        elif action == "take":
+            self.pick_up_item(clue_name)
+        else:
+            print("Invalid action.")
     
     def examine_item(self, item):
-       if item in self.evidence_items:
+       if item in self.evidence_items :
            description = self.evidence_items[item]["description"]
            response = self.evidence_items[item]["Response"]
            print(f"Examining {item}: {description}")
            print(f"Response: {response}")
        else:
            print("This item cannot be examined.")
-
+    
     def pick_up_item(self, item):
        if item in self.evidence_items:
            self.inv.add_item(item)
@@ -184,13 +183,5 @@ class Interact():
            del self.evidence_items[item]
        else:
            print("This item cannot be picked up.")
-        
-    
-        
-            
-
-
-        
-
 
  
